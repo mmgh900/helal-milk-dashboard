@@ -1,10 +1,8 @@
-import './globals.css';
-
 import { Analytics } from '@vercel/analytics/react';
-import Nav from './nav';
-import Toast from './toast';
-import { Suspense } from 'react';
-
+import HelalThemeProvider from '../theme/theme-provider';
+import DashboardLayout from './dashboard-layout';
+import QueryProvider from '../theme/query-provider';
+import '../theme/global.scss'
 export const metadata = {
   title: 'Next.js 13 + PlanetScale + NextAuth + Tailwind CSS',
   description:
@@ -12,20 +10,23 @@ export const metadata = {
 };
 
 export default async function RootLayout({
-  children
-}: {
+                                           children
+                                         }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-gray-50">
-      <body className="h-full">
-        <Suspense>
-          <Nav />
-        </Suspense>
-        {children}
+    <html lang='fa-IR' dir={'rtl'}>
+    <QueryProvider>
+      <HelalThemeProvider>
+        <body>
+        <DashboardLayout>
+          {children}
+        </DashboardLayout>
         <Analytics />
-        <Toast />
-      </body>
+        </body>
+      </HelalThemeProvider>
+    </QueryProvider>
+
     </html>
   );
 }

@@ -1,0 +1,7 @@
+{
+  "welcomeMessage": "Welcome to my app!",
+  "homePage": {
+    "title": "Home",
+    "content": "This is the home page."
+  }
+}
