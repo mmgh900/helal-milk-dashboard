@@ -11,7 +11,7 @@ import GifPlayer from 'react-gif-player';
 import TrainingGif from '../public/images/ai-training.gif';
 import Box from '@mui/material/Box';
 
-export default function Settings() {
+function Settings() {
   const {
     mutate: retrainDaysOpen,
     isLoading: daysOpenLoading,
@@ -52,7 +52,12 @@ export default function Settings() {
               daysOpenLoading ?
                 <>
                   <Box sx={{ mixBlendMode: 'exclusion' }}>
-                    <GifPlayer gif={'/images/ai-training.gif'} autoplay={true} loop={true} />
+               {/*     {
+                      typeof window !== 'undefined' &&
+                      <GifPlayer gif={'/images/ai-training.gif'} autoplay={true} loop={true} />
+                    }*/}
+
+
                   </Box>
 
                   <LinearProgress sx={{ height: 10, borderRadius: 20, width: '90%' }} />
@@ -74,7 +79,7 @@ export default function Settings() {
                   {
                     daysOpenAccuracy ?
                       <Typography marginBottom={4}>
-                       آموزش مدل با موفقیت انجام شد. خروجی: {daysOpenAccuracy}
+                        آموزش مدل با موفقیت انجام شد. خروجی: {daysOpenAccuracy}
                       </Typography>
                       :
                       <Typography marginBottom={4}>
@@ -104,7 +109,11 @@ export default function Settings() {
               insResLoading ?
                 <>
                   <Box sx={{ mixBlendMode: 'exclusion' }}>
-                    <GifPlayer gif={'/images/ai-training.gif'} autoplay={true} loop={true} />
+                  {/*  {
+                      typeof window !== 'undefined' &&
+                      <GifPlayer gif={'/images/ai-training.gif'} autoplay={true} loop={true} />
+                    }*/}
+
                   </Box>
 
                   <LinearProgress sx={{ height: 10, borderRadius: 20, width: '90%' }} />
@@ -154,3 +163,11 @@ export default function Settings() {
   )
     ;
 }
+/*
+
+Settings.getInitialProps = async () => {
+  return { ssr: false }; // Disable SSR for this page
+};
+*/
+
+export default Settings;
