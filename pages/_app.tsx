@@ -17,7 +17,5 @@ export default function MyApp({ Component, pageProps }: any) {
         </HelalThemeProvider>
       </QueryClientProvider>
     </div>
-
-
   );
 }

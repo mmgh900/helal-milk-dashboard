@@ -3,7 +3,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "env-cmd -f .env next build",
+    "export": "env-cmd -f .env next export",
     "start": "next start",
     "lint": "next lint"
   },
